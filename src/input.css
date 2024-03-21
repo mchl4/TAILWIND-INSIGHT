@@ -1,0 +1,245 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container{
+    @apply max-w-[90rem] p-4 w-full mx-auto;
+}
+
+@layer components{
+    .banner{
+        @apply bg-Banner bg-cover bg-no-repeat h-[70vh];
+    }
+    .branding{
+        @apply md:flex md:gap-10 w-full md:justify-between;
+    }
+    .branding__img{
+        @apply w-[5rem]  md:w-[6rem] 
+    }
+    .branding .header__navd{
+        @apply hidden md:flex md:items-center   ;
+    }
+    
+    .stickyheader {
+        @apply md:fixed md:w-[70%] md:p-[1rem] md:rounded-xl  md:transition-all  md:bg-dark z-50 md:left-0 md:right-0 md:mx-auto;
+      }
+    
+    .header__wrapper{
+        @apply flex justify-center items-center ;
+    }
+    .branding .header__navd{
+        @apply hidden md:flex 
+    }
+   
+    .branding .header__navd li{
+        @apply font-medium text-sm text-light text-right md:hover:bg-light md:hover:text-pula md:p-5 md:transition-all;
+    }
+    .header__action{
+        @apply bg-dark absolute top-[0rem] right-0 w-0 h-[100vh] px-0 pt-0 overflow-hidden transition-all shadow-md
+        md:static md:h-fit md:w-fit md:shadow-none md:hidden;
+    }
+    .header__action.open{
+        @apply z-[999] w-[100%] px-10 pt-10 transition-all;
+    }
+    .header__action{
+        @apply flex flex-col gap-10 items-center 
+    }
+    .header__action .header__navm{
+        @apply text-light text-2xl  font-semibold text-center mt-7 flex flex-col  md:hidden;
+    }
+    .header__action .header__navm li{
+        @apply hover:bg-light  hover:text-pula p-3 transition-all
+    }
+    .header__action .header__navsocial{
+        @apply flex flex-row justify-center gap-[1rem] md:hidden;
+    }
+   .header__action img{
+        @apply md:hidden;
+   }
+    .header__navsocial li:first-child{
+        @apply text-light text-2xl border-4 px-1 border-transparent hover:bg-slate-50/50 hover:text-amber-300;
+    }
+    .header__navsocial li:nth-child(2){
+        @apply text-light text-2xl border-4 px-1 border-transparent hover:bg-slate-50/50 hover:text-blue-600;
+    }
+    .header__navsocial li:nth-child(3){
+        @apply text-light text-2xl border-4 px-1 border-transparent hover:bg-slate-50/50 hover:text-blue-950;
+    }
+    .burgir__menu{
+        @apply z-[999] flex flex-col items-end md:hidden;
+    }
+    .burgir__menu span{
+        @apply  w-[1.5rem] h-[.2rem] bg-light block rounded-full transition-all;
+    }
+    .burgir__menu span:first-child{
+        @apply w-[1.5rem] h-[.2rem];
+    }
+    .burgir__menu span:nth-child(2){
+        @apply w-[1.2rem] h-[.2rem] ;
+    }
+    .burgir__menu span:nth-child(3){
+        @apply w-[.6rem] h-[.2rem];
+    }
+    .burgir__menu span:nth-child(2){
+        @apply my-1;
+    }
+    .burgir__menu.open span:first-child{
+        @apply w-[1.5rem] h-[.2rem] transform translate-y-[10px] rotate-[225deg] transition-all;
+    }
+    .burgir__menu.open span:nth-child(2){
+        @apply opacity-0 transition-all;
+    }
+    .burgir__menu.open span:last-child{
+        @apply w-[1.5rem] h-[.2rem] transform translate-y-[-4px] rotate-[-225deg] transition-all;
+    }
+    .banner__main__content{
+        @apply flex flex-col gap-16 justify-center items-center mt-[3rem];
+    }
+    .banner__main__content h1{
+        @apply text-4xl text-light text-center md:text-5xl md:tracking-wider md:leading-[4rem] md:absolute md:top-[20%];
+    }
+    .banner__main__content ul{
+        @apply flex flex-col gap-3 md:flex md:flex-row md:absolute md:top-[40%];
+    }
+}
+
+.services__title{
+    @apply text-center m-5 md:text-left md:ml-[11.2rem];
+}
+.services__title h2{
+    @apply text-4xl text-pula font-semibold;
+}
+.services__title p{
+    @apply text-sm;
+}
+.services__cards{
+    @apply flex flex-col gap-8 p-9 md:flex md:flex-row md:gap-10 md:px-2 md:mb-5 md:justify-center;
+}
+.services__card p{
+    @apply px-8 
+}
+.services__card ul{
+    @apply px-8 
+}
+.services__card{
+    @apply flex flex-col gap-6 border-2 rounded-xl py-0 px-2 md:hover:scale-[1.1] md:w-[20rem] md:h-[27.5rem]  ;
+}
+.services__card h3{
+    @apply text-dark text-2xl font-bold text-center mt-5;
+}
+.services__card li{ 
+    @apply list-disc ml-5;
+}
+.services__card a{
+    @apply text-pula text-center pt-5 mt-10 border-t-2 border-pula;
+}
+
+/* PROJECTS */
+.projects__cards{
+    @apply flex flex-col gap-10 md:flex md:flex-row md:gap-0;
+}
+.projects__card{
+    @apply h-[550px] flex flex-col justify-center items-center  ;
+    
+}
+.project__content{
+    @apply relative text-light text-justify pt-[2rem] px-5 w-[80%] h-[60%] md:w-[100%] md:h-[100%]  mx-auto bg-black/50 transition-all md:hover:w-[80%] md:hover:h-[60%] ;
+}
+.project__item{
+    @apply md:opacity-0 md:hover:opacity-100 md:pt-4;
+}
+
+.project__content p{
+    @apply mt-5;
+}
+.project__content h4{
+    @apply text-center font-bold text-2xl;
+}
+.project__content a{
+    @apply text-center bg-pula mt-10 ml-20;
+}
+
+
+/* CONTACTS */
+.contacts__title{
+    @apply text-center m-5 md:text-left md:ml-[13rem];
+}
+.contacts__title h2{
+    @apply text-4xl text-pula font-semibold;
+}
+
+.contact__info{
+    @apply flex flex-col gap-5 md:mt-10;
+}
+.contacts__wrapper{
+    @apply md:h-[65vh]
+} 
+.contact__form{
+    @apply md:w-[40%] md:bg-light;
+}
+.contacts__content{
+    @apply md:flex md:flex-row-reverse md:justify-center
+}
+.contact-card{
+    @apply flex items-center gap-5 px-5 ;
+}
+.contact-card i{
+    @apply text-pula;
+}
+.sm-button{
+    @apply flex justify-end ;
+}
+
+
+/* FOOTER */
+.footer__wrapperm{
+    @apply flex flex-col items-center gap-5 px-5 py-10 md:hidden;
+}
+.footer__wrapperd{
+    @apply hidden md:flex md:flex-row md:justify-center md:justify-around md:items-center md:px-10 md:pt-20 md:pb-10
+}
+.footer img{
+    @apply opacity-60 w-[7rem];
+}
+.footer__icons{
+    @apply flex flex-row gap-5 text-gray-400;
+}
+.footer p{
+    @apply text-gray-400 text-sm;
+}
+
+
+
+@layer utilities{
+    .btn{
+        @apply inline-block py-[.5rem] px-[1rem] border-transparent text-sm font-medium hover:scale-[1.1];
+    }
+    .btn.bg--dark{
+        @apply bg-dark text-light rounded-full ;
+    }
+    .btn.bg--pula{
+        @apply  bg-pula text-light px-[10rem] py-[.8rem]  rounded-full hover:bg-light hover:text-pula text-center md:w-[10%] md:text-center no-underline;
+    }
+    .btn.bg--pula-sm{
+        @apply  bg-pula text-light px-[3rem] py-[.8rem] rounded-full text-center md:w-[40%] md:px-[2rem] md:text-center no-underline ;
+    }
+    .btn.bg--light{
+        @apply bg-light text-dark border-dark rounded-full  border-[1px] ;
+    }
+    .btn.bg--transparent{
+        @apply bg-transparent text-dark font-medium rounded-full  border-dark border-[1px];
+    }
+    .btn.bg--transparent-light{
+        @apply bg-transparent px-[9rem] py-[.8rem] text-center rounded-full text-light font-medium border-light border-[1px] hover:bg-light hover:text-pula md:px-[2rem];
+    }
+    .btn.bg--pula-box{
+        @apply  bg-pula text-light px-[2rem] py-[.7rem] rounded-lg w-[50%] text-center md:text-center no-underline hover:bg-light hover:text-pula md:w-[60%];
+    }
+    .btn.bg--pula-more{
+        @apply  bg-transparent border-t-2 text-pula px-[2rem] py-[1rem] rounded-none w-[100%] text-center md:w-[10%] md:text-center no-underline hover:bg-pula hover:text-light md:w-[100%];
+    }
+    .btn.bg--pulatwo{
+        @apply bg-transparent px-[9rem] py-[.8rem] text-center w-[100%] rounded-full text-light font-medium bg-pula hover:bg-light hover:text-pula md:px-[3rem];
+    }
+    
+}
